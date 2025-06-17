@@ -2855,10 +2855,10 @@ input:checked + .toggleSwitchSlider:before {
 
 /* Logo image. */
 #image_seal {
-    height: 70px;
+    height: 100px;
     width: auto;
     position: relative;
-    border: 2px solid white;
+    /* border: 2px solid white; */
     box-sizing: border-box;
     border-radius: 50%;
 }
@@ -2866,10 +2866,10 @@ input:checked + .toggleSwitchSlider:before {
 /* Logo container styles. */
 #image_seal_container {
     position: relative;
-    height: 70px;
-    width: 70px;
+    height: 100px;
+    width: 100px;
     border-radius: 50%;
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
 /* Logo container styles w/ update. */
@@ -2911,7 +2911,7 @@ input:checked + .toggleSwitchSlider:before {
     top: 115%;
     left: -17.5px;
     font-family: 'Avenir Medium';
-    font-size: 12px;
+    font-size: 14px;
     transition: visibility 0s linear 0.25s, opacity 0.25s ease;
 }
 #updateAvailableTooltip::after {
@@ -3013,7 +3013,7 @@ input:checked + .toggleSwitchSlider:before {
 
 /* User profile name text. */
 #user_text {
-    font-size: 12px;
+    font-size: 14px;
     min-width: 135px;
     font-weight: 900;
     letter-spacing: 1px;
@@ -3181,7 +3181,7 @@ input:checked + .toggleSwitchSlider:before {
 
 /* Style for a general label on the bottom of the landing view. */
 .bot_label {
-    font-size: 9px;
+    font-size: 12px;
     letter-spacing: 1px;
     font-weight: bold;
     text-shadow: 0px 0px 0px #bebcbb;
@@ -3209,7 +3209,7 @@ input:checked + .toggleSwitchSlider:before {
 /* Span which displays the player count of the selected server. */
 #player_count {
     color: #949494;
-    font-size: 8px;
+    font-size: 12px;
     font-weight: 900;
     text-shadow: 0px 0px 20px #949494;
     margin-left: 10px;

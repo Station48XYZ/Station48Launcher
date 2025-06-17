@@ -1,13 +1,13 @@
 {
-  "name": "tempus-launcher",
-  "version": "1.0.0",
-  "productName": "Tempus Launcher",
+  "name": "station48-launcher",
+  "version": "0.1.0",
+  "productName": "Station48 Launcher",
   "description": "Modded Minecraft Launcher",
-  "author": "Daniel Scalzi (https://github.com/dscalzi/) - Modified by TempusMMORPG",
+  "author": "Daniel Scalzi (https://github.com/dscalzi/) - Modified by Station48XYZ",
   "license": "UNLICENSED",
-  "homepage": "https://github.com/TempusMMORPG/TempusLauncher",
+  "homepage": "https://github.com/Station48XYZ/Station48Launcher",
   "bugs": {
-    "url": "https://github.com/TempusMMORPG/TempusLauncher/issues"
+    "url": "https://github.com/Station48XYZ/Station48Launcher/issues"
   },
   "private": true,
   "main": "index.js",
@@ -46,6 +46,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TempusMMORPG/TempusLauncher.git"
+    "url": "git+https://github.com/Station48XYZ/Station48Launcher.git"
   }
 }

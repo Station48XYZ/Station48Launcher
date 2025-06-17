@@ -1,20 +1,20 @@
 # Custom Language File for Launcher Customizer
 
 [ejs.app]
-title = "TempusMMO Launcher"
+title = "Station48 Launcher"
 
 [ejs.landing]
-mediaGitHubURL = "https://github.com/TempusMMORPG/TempusLauncher"
+mediaGitHubURL = "https://station48.xyz"
 mediaXURL = "#"
 mediaInstagramURL = "#"
 mediaYouTubeURL = "#"
-mediaDiscordURL = "https://discord.gg/ky8zPFk"
+mediaDiscordURL = "https://discord.gg/Hq5j3WhX9b"
 
 [ejs.settings]
-sourceGithubLink = "https://github.com/TempusMMORPG/TempusLauncher"
-supportLink = "https://github.com/TempusMMORPG/TempusLauncher/issues"
+sourceGithubLink = "https://github.com/Station48XYZ/Station48Launcher"
+supportLink = "https://github.com/Station48XYZ/Station48Launcher/issues"
 
 [ejs.welcome]
-welcomeHeader = "Welcome to TempusMMORPG"
-welcomeDescription = "TempusMMO is an open-world, adventure roleplay server with the aiming to be a fully functioning Cobblemon MMO based on the Pokemon Anime, in a completely new region!"
-welcomeDescCTA = "You are just a few clicks away from entering the world of Tempus."
+welcomeHeader = "Welcome to Station48"
+welcomeDescription = "Station48 is a all Inclusive and Welcoming Community Minecraft Server for all Players, Devs and non-devs alike! We are a community of developers (Mostly Astro Devs), builders, and players who love to relax, create, and play Minecraft together."
+welcomeDescCTA = "You are just a few clicks away from getting started on your Station48 journey!"
