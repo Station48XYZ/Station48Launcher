@@ -38,7 +38,11 @@ mac:
 
 # Linux Configuration
 linux: 
-  target: 'AppImage'
+  target:
+    - target: deb
+    - target: pacman
+    - target: rpm
+    - target: AppImage
   maintainer: 'Station48.xyz'
   vendor: 'Station48.xyz'
   synopsis: 'Modded Minecraft Launcher'
