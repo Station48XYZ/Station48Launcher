@@ -40,9 +40,15 @@ mac:
 linux: 
   target:
     - target: deb
-    - target: pacman
-    - target: rpm
     - target: AppImage
+    - target: rpm
+    - target: pacman
+  desktop:
+    Type: "Application"
+    Encoding: "UTF-8"
+    Name: "Station48 Launcher"
+    Terminal: "false"
+    MimeType: "text/html;x-scheme-handler/station48"
   maintainer: 'Station48.xyz'
   vendor: 'Station48.xyz'
   synopsis: 'Modded Minecraft Launcher'
