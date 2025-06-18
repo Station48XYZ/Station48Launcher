@@ -614,7 +614,7 @@ async function dlAsync(login = true) {
         }
     })
 
-    loggerLaunchSuite.info(ang.queryJS('landing.dlAsync.validatingFileIntegrity'))
+    loggerLaunchSuite.info(Lang.queryJS('landing.dlAsync.validatingFileIntegrity'))
     setLaunchDetails(Lang.queryJS('landing.dlAsync.validatingFileIntegrity'))
     let invalidFileCount = 0
     try {
