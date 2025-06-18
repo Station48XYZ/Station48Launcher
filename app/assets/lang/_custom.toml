@@ -5,9 +5,9 @@ title = "Station48 Launcher"
 
 [ejs.landing]
 mediaGitHubURL = "https://station48.xyz"
-mediaXURL = "#"
-mediaInstagramURL = "#"
-mediaYouTubeURL = "#"
+mediaXURL = ""
+mediaInstagramURL = ""
+mediaYouTubeURL = ""
 mediaDiscordURL = "https://discord.gg/Hq5j3WhX9b"
 
 [ejs.settings]
