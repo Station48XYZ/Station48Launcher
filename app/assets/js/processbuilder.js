@@ -488,12 +488,10 @@ class ProcessBuilder {
                     }
                 }
 
-                // TODO splice not push
                 if(checksum === args[i].rules.length){
                     if(typeof args[i].value === 'string'){
                         args[i] = args[i].value
                     } else if(typeof args[i].value === 'object'){
-                        //args = args.concat(args[i].value)
                         args.splice(i, 1, ...args[i].value)
                     }
 

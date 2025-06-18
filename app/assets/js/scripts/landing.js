@@ -362,8 +362,6 @@ async function asyncSystemScan(effectiveJavaOptions, launchAfter = true){
         settingsJavaExecVal.value = javaExec
         await populateJavaExecDetails(settingsJavaExecVal.value)
 
-        // TODO Callback hell, refactor
-        // TODO Move this out, separate concerns.
         if(launchAfter){
             await dlAsync()
         }
@@ -373,8 +371,6 @@ async function asyncSystemScan(effectiveJavaOptions, launchAfter = true){
 
 async function downloadJava(effectiveJavaOptions, launchAfter = true) {
 
-    // TODO Error handling.
-    // asset can be null.
     const asset = await latestOpenJDK(
         effectiveJavaOptions.suggestedMajor,
         ConfigManager.getDataDirectory(),
@@ -428,9 +424,6 @@ async function downloadJava(effectiveJavaOptions, launchAfter = true) {
 
     clearInterval(extractListener)
     setLaunchDetails(Lang.queryJS('landing.downloadJava.javaInstalled'))
-
-    // TODO Callback hell
-    // Refactor the launch functions
     asyncSystemScan(effectiveJavaOptions, launchAfter)
 
 }

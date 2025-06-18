@@ -1,5 +1,5 @@
 appId: 'station48launcher'
-productName: 'Station48 Launcher'
+productName: 'Station48-Launcher'
 artifactName: '${productName}-setup-${version}.${ext}'
 
 copyright: 'Copyright © 2018-2024 Daniel Scalzi - Modified by Station48 2025'
@@ -46,7 +46,7 @@ linux:
   desktop:
     Type: "Application"
     Encoding: "UTF-8"
-    Name: "Station48 Launcher"
+    Name: "Station48-Launcher"
     Terminal: "false"
     MimeType: "text/html;x-scheme-handler/station48"
   maintainer: 'Station48.xyz'
