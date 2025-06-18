@@ -82,6 +82,18 @@ bindFileSelectors()
  * General Settings Functions
  */
 
+closeOnLaunchCheckbox  = document.querySelector('input[cValue="CloseOnLaunch"]')
+launchDetachedCheckbox = document.querySelector('input[cValue="LaunchDetached"]')
+
+closeOnLaunchCheckbox.addEventListener('change', function() {
+    if (this.checked) {
+        launchDetachedCheckbox.disabled = true
+        launchDetachedCheckbox.checked  = true
+    } else {
+        launchDetachedCheckbox.disabled = false
+    }
+})
+
 /**
   * Bind value validators to the settings UI elements. These will
   * validate against the criteria defined in the ConfigManager (if
