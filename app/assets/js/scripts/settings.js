@@ -356,8 +356,9 @@ const msftLogoutLogger = LoggerUtil.getLogger('Microsoft Logout')
 
 // Bind the add microsoft account button.
 document.getElementById('settingsAddMicrosoftAccount').onclick = (e) => {
+    document.getElementById("waitingText").innerHTML = "Please login in the window that has just opened"
     switchView(getCurrentView(), VIEWS.waiting, 500, 500, () => {
-        ipcRenderer.send(MSFT_OPCODE.OPEN_LOGIN, VIEWS.settings, VIEWS.settings)
+        ipcRenderer.send(MSFT_OPCODE.OPEN_LOGIN, VIEWS.landing, VIEWS.settings)
     })
 }
 
@@ -383,6 +384,7 @@ ipcRenderer.on(MSFT_OPCODE.REPLY_LOGIN, (_, ...arguments_) => {
             )
             setOverlayHandler(() => {
                 toggleOverlay(false)
+                if (errorDesc !== "The user has denied access to the scope requested by the client application.") toggleOverlay(true)//If the user clicks "Back" button and closes the window
             })
             toggleOverlay(true)
         })
@@ -418,6 +420,7 @@ ipcRenderer.on(MSFT_OPCODE.REPLY_LOGIN, (_, ...arguments_) => {
 
             const authCode = queryMap.code
             AuthManager.addMicrosoftAccount(authCode).then(value => {
+                document.getElementById("waitingText").innerHTML = "Finished"
                 updateSelectedAccount(value)
                 switchView(getCurrentView(), viewOnClose, 500, 500, async () => {
                     await prepareSettings()
@@ -519,6 +522,7 @@ function processLogOut(val, isLastAccount){
     if(targetAcc.type === 'microsoft') {
         msAccDomElementCache = parent
         switchView(getCurrentView(), VIEWS.waiting, 500, 500, () => {
+            document.getElementById("waitingText").innerHTML = "Removing your Microsoft account from the launcher" //We actually don't have to wait anything from Microsoft
             ipcRenderer.send(MSFT_OPCODE.OPEN_LOGOUT, uuid, isLastAccount)
         })
     } else {
@@ -568,7 +572,7 @@ ipcRenderer.on(MSFT_OPCODE.REPLY_LOGOUT, (_, ...arguments_) => {
                 }
                 if(isLastAccount) {
                     loginOptionsCancelEnabled(false)
-                    loginOptionsViewOnLoginSuccess = VIEWS.settings
+                    loginOptionsViewOnLoginSuccess = VIEWS.landing
                     loginOptionsViewOnLoginCancel = VIEWS.loginOptions
                     switchView(getCurrentView(), VIEWS.loginOptions)
                 }
