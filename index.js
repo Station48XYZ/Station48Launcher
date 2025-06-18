@@ -260,19 +260,18 @@ ipcMain.on(MSFT_OPCODE.OPEN_LOGIN, (ipcEvent, ...arguments_) => {
 	/*
 		Clear cookies from live.com and github.com from Microsoft Login, since there isn't an actual way to invalidate Microsoft access token
 	*/
-    // TODO: Re-enable this later
-    // session.defaultSession.cookies.get({ domain: 'live.com' }).then((cookies) => {
-    //     for (let cookie of cookies) {
-    //         let urlcookie = `http${cookie.secure ? "s" : ""}://${cookie.domain.replace(/$\./, "") + cookie.path}`;
-    //         session.defaultSession.cookies.remove(urlcookie, cookie.name)
-    //     }
-    // })
-    // session.defaultSession.cookies.get({ domain: 'github.com' }).then((cookies) => {
-    //     for (let cookie of cookies) {
-    //         let urlcookie = `http${cookie.secure ? "s" : ""}://${cookie.domain.replace(/$\./, "") + cookie.path}`;
-    //         session.defaultSession.cookies.remove(urlcookie, cookie.name)
-    //     }
-    // })
+    session.defaultSession.cookies.get({ domain: 'live.com' }).then((cookies) => {
+        for (let cookie of cookies) {
+            let urlcookie = `http${cookie.secure ? "s" : ""}://${cookie.domain.replace(/$\./, "") + cookie.path}`;
+            session.defaultSession.cookies.remove(urlcookie, cookie.name)
+        }
+    })
+    session.defaultSession.cookies.get({ domain: 'github.com' }).then((cookies) => {
+        for (let cookie of cookies) {
+            let urlcookie = `http${cookie.secure ? "s" : ""}://${cookie.domain.replace(/$\./, "") + cookie.path}`;
+            session.defaultSession.cookies.remove(urlcookie, cookie.name)
+        }
+    })
     if (msftAuthWindow) {
         ipcEvent.reply(MSFT_OPCODE.REPLY_LOGIN, MSFT_REPLY_TYPE.ERROR, MSFT_ERROR.ALREADY_OPEN, msftAuthViewOnClose)
         return
