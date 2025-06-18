@@ -5,10 +5,15 @@ title = "Station48 Launcher"
 
 [ejs.landing]
 mediaGitHubURL = "https://station48.xyz"
+mediaGitHubLabel = "Website"
 mediaXURL = ""
+mediaXLabel = "X.com"
 mediaInstagramURL = ""
+mediaInstagramLabel = "Instagram"
 mediaYouTubeURL = ""
+mediaYouTubeLabel = "YouTube"
 mediaDiscordURL = "https://discord.gg/Hq5j3WhX9b"
+mediaDiscordLabel = "Discord"
 
 [ejs.settings]
 sourceGithubLink = "https://github.com/Station48XYZ/Station48Launcher"
