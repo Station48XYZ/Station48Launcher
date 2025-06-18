@@ -82,7 +82,7 @@ const DEFAULT_CONFIG = {
             resHeight: 720,
             fullscreen: false,
             CloseOnLaunch: false,
-            autoConnect: true,
+            autoConnect: false,
             launchDetached: true
         },
         launcher: {
