@@ -393,7 +393,7 @@ class ProcessBuilder {
 
         // Java Arguments
         if(process.platform === 'darwin'){
-            args.push('-Xdock:name=HeliosLauncher')
+            args.push('-Xdock:name=Station48Launcher')
             args.push('-Xdock:icon=' + path.join(__dirname, '..', 'images', 'minecraft.icns'))
         }
         args.push('-Xmx' + ConfigManager.getMaxRAM(this.server.rawServer.id))
@@ -444,7 +444,7 @@ class ProcessBuilder {
 
         // Java Arguments
         if(process.platform === 'darwin'){
-            args.push('-Xdock:name=HeliosLauncher')
+            args.push('-Xdock:name=Station48Launcher')
             args.push('-Xdock:icon=' + path.join(__dirname, '..', 'images', 'minecraft.icns'))
         }
         args.push('-Xmx' + ConfigManager.getMaxRAM(this.server.rawServer.id))
@@ -456,6 +456,27 @@ class ProcessBuilder {
 
         // Vanilla Arguments
         args = args.concat(this.vanillaManifest.arguments.game)
+
+        async function WriteFullscreenToOptions(filePath, lineToReplace, newLine) {
+            try {
+                const exists = await fs.pathExists(filePath);
+
+                if (exists) {
+                    let fileContent = await fs.readFile(filePath, 'utf8');
+                    if (fileContent.includes(lineToReplace)) {
+                        fileContent = fileContent.replace(lineToReplace, newLine);
+                        await fs.outputFile(filePath, fileContent);
+                    } else {
+                        await fs.outputFile(filePath, newLine);
+                    }
+                } else {
+                    await fs.outputFile(filePath, newLine);
+                }
+            } catch (err) {
+                logger.info('Error while writing fullscreen to options.txt:', err);
+            }
+        }
+
 
         for(let i=0; i<args.length; i++){
             if(typeof args[i] === 'object' && args[i].rules != null){
@@ -478,11 +499,16 @@ class ProcessBuilder {
                         // This should be fine for a while.
                         if(rule.features.has_custom_resolution != null && rule.features.has_custom_resolution === true){
                             if(ConfigManager.getFullscreen()){
+                                logger.info("gamedir: ", this.gameDir)
+                                WriteFullscreenToOptions(path.join(this.gameDir, "options.txt"), 'fullscreen:false', 'fullscreen:true')
                                 args[i].value = [
                                     '--fullscreen',
                                     'true'
                                 ]
+                            } else {
+                                WriteFullscreenToOptions(path.join(this.gameDir, "options.txt"), 'fullscreen:true', 'fullscreen:false');
                             }
+                            
                             checksum++
                         }
                     }
