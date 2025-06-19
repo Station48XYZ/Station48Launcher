@@ -18,6 +18,8 @@ mediaDiscordLabel = "Discord"
 [ejs.settings]
 sourceGithubLink = "https://github.com/Station48XYZ/Station48Launcher"
 supportLink = "https://github.com/Station48XYZ/Station48Launcher/issues"
+websiteLink = "https://station48.xyz"
+websiteLabel = "Website"
 
 [ejs.welcome]
 welcomeHeader = "Welcome to Station48"
