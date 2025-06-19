@@ -262,14 +262,14 @@ ipcMain.on(MSFT_OPCODE.OPEN_LOGIN, (ipcEvent, ...arguments_) => {
 	*/
     session.defaultSession.cookies.get({ domain: 'live.com' }).then((cookies) => {
         for (let cookie of cookies) {
-            let urlcookie = `http${cookie.secure ? "s" : ""}://${cookie.domain.replace(/$\./, "") + cookie.path}`;
-            session.defaultSession.cookies.remove(urlcookie, cookie.name)
+            let url_cookie = `http${cookie.secure ? "s" : ""}://${cookie.domain.replace(/$\./, "") + cookie.path}`;
+            session.defaultSession.cookies.remove(url_cookie, cookie.name)
         }
     })
     session.defaultSession.cookies.get({ domain: 'github.com' }).then((cookies) => {
         for (let cookie of cookies) {
-            let urlcookie = `http${cookie.secure ? "s" : ""}://${cookie.domain.replace(/$\./, "") + cookie.path}`;
-            session.defaultSession.cookies.remove(urlcookie, cookie.name)
+            let url_cookie = `http${cookie.secure ? "s" : ""}://${cookie.domain.replace(/$\./, "") + cookie.path}`;
+            session.defaultSession.cookies.remove(url_cookie, cookie.name)
         }
     })
     if (msftAuthWindow) {
